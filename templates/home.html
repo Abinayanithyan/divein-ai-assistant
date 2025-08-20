@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat App</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">DiveIn</div>
+    
+    <!-- Chat messages -->
+    <div class="chat-messages" id="chat-box">
+     {% for msg in chat_history %}
+        {% if msg.role != "system" %}
+      <div class="message {{ msg.role }}">
+        <strong>{{ msg.role.capitalize() }}:</strong> {{ msg.content }}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+
+    <!-- Chat input -->
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type a message..." required>
+      <button type="button" id="sendBtn">Send</button>
+    </div>
+  </div>
+
+  <!-- Pass session_id to JS -->
+  <script>
+    const session_id = "{{ session_id }}";
+  </script>
+  <script src="{{ url_for('static', path='script.js') }}"></script>
+</body>
+</html>

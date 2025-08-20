@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Generator</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+  <div class="image-container">
+    <h2>✨ Generate Image with AI ✨</h2>
+    
+    <form method="POST" class="image-form">
+      <input type="text" name="user_input" placeholder="Describe the image..." required>
+      <button type="submit">Generate</button>
+    </form>
+
+    {% if image_url %}
+      <div class="image-result">
+        <h3>Result for: <em>"{{ user_input }}"</em></h3>
+        <img src="{{ image_url }}" alt="AI Generated Image">
+        <div class="image-actions">
+          <a href="{{ image_url }}" target="_blank">🔍 View Full Size</a> |
+          <a href="{{ image_url }}" download="generated_image.png">⬇️ Download</a>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

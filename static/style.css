@@ -1,0 +1,122 @@
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: 
+    linear-gradient(rgba(50, 58, 67, 0.7), rgba(103, 55, 65, 0.7)),
+    url("underwater.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+
+.chat-container {
+  width: 1000px;
+  max-width: 90%;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  background: #1C1E26; /* solid dark background */
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.chat-header {
+  padding: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  border-bottom: 1px solid #2A2E3C;
+  text-align: center;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message {
+  max-width: 75%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  word-wrap: break-word;
+}
+
+.user {
+  align-self: flex-end;
+  background: #295f9d; /* solid blue for user */
+  color: #fff;
+}
+
+.assistant {
+  align-self: flex-start;
+  background: #2A2E3C; /* solid dark gray for bot */
+  color: #fff;
+}
+
+.chat-input {
+  display: flex;
+  padding: 12px;
+  border-top: 1px solid #2A2E3C;
+  background: #1C1E26;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: #2A2E3C; /* solid input field */
+  color: #fff;
+}
+
+.chat-input button {
+  margin-left: 10px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg,#2a4a78,#58a6ac); /* gradient only on button */
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* space between bubbles */
+}
+
+.user, .assistant {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  display: inline-block;
+}
+
+.user {
+  align-self: flex-end;
+  background: #295f9d; /* solid blue for user */
+  color: #fff;
+  border-bottom-right-radius: 5px; /* flat edge like chat apps */
+}
+
+.assistant {
+  align-self: flex-start;
+  background: #2A2E3C; /* solid dark gray for bot */
+  color: #fff;
+  border-bottom-left-radius: 5px;
+}
